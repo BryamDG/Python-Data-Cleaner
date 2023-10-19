@@ -1,0 +1,27 @@
+import re
+
+def remove_data_contrast(html):
+    pattern = r'data-contrast="none"|data-font="Symbol"'
+    html = re.sub(pattern, '', html)
+    return html
+
+html = '''
+&nbsp;
+
+<span data-contrast="none">Trata-se de <strong>solicitação de regularização de intervenção já executada em bem protegido pelo Condephaat ou em sua área envoltória</strong>, que ocorreu sem a aprovação prévia do órgão. A solicitação de regularização deve seguir as mesmas orientações previstas para cada tipo de intervenção:</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335551550&quot;:6,&quot;335551620&quot;:6,&quot;335559685&quot;:0,&quot;335559737&quot;:0,&quot;335559738&quot;:0,&quot;335559739&quot;:200,&quot;335559740&quot;:276}"> </span>
+
+<strong>Em caso de bens imóveis: </strong>
+<ul>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><a href="http://condephaat.sp.gov.br/manejo-arboreo/">Manejo arbóreo</a></li>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="http://condephaat.sp.gov.br/manutencao-e-conservacao/">Manutenção ou conservação</a></li>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="http://condephaat.sp.gov.br/desmembramento-ou-remembramento/">Desmembramento ou remembramento</a></li>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="http://condephaat.sp.gov.br/instalacao-provisoria-em-evento-temporario/">Instalação provisória em eventos temporários</a></li>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="http://condephaat.sp.gov.br/anuncio/">Anúncio</a></li>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="http://condephaat.sp.gov.br/instalacao-de-energia-letrica-em-areas-naturais/">Instalação de energia elétrica em imóveis inseridos em áreas naturais</a></li>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="http://condephaat.sp.gov.br/obras-de-infraestrutura-urbana-e-rural/">Obras de infraestrutura urbana e rural</a></li>
+    <li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="http://condephaat.sp.gov.br/demolicao/">Demolição em áreas tombadas ou em estudo de tombamento</a></li>
+
+'''
+
+html_sem_data_contrast = remove_data_contrast(html)
+print(html_sem_data_contrast)
